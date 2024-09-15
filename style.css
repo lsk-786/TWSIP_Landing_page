@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background:url(bg.jpeg);
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(bg.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  
+  
+  header img{
+    width: 17vh;
+    background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(logo.jpeg) ;
+    
+  }
+  header .navbar a{
+  color: rgb(111, 175, 175);
+  
+  text-decoration: none;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding: 2px 5px;
+  justify-content: space-between;
+  text-align: right;
+  font-size: 30px;
+  transform: 0.3s;
+  }
+  
+  header .navbar a:not(:last-child){
+    margin-right: 30px;
+  
+  }
+  
+  header .navbar a:hover{
+    color: #eeebeb;
+    background: #000000f3;
+    transform: 0.5s;
+    font-size: 1.5rem;
+  }
+  
+  
+  .desc{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .desc h1{
+    font-size: 69px;
+  }
+  .desc p{
+    margin: 10px 0 40px;
+    font-size: 25px;
+    color: #fff;
+  }
+  .desc a{
+   text-decoration: none;
+   color:#fff;
+   background-color: black;
+   padding: 10px 20px;
+   margin:0 15px;
+   letter-spacing: 2px;
+   cursor:pointer;
+  
+  }
+  .desc a:hover{
+  
+    border: 1px solid red;
+    background: red;
+    transition: 1s;
+  
+  }
+  label{
+    display: none;
+  
+  }
+  #check{
+    z-index: 3;
+    display: none;
+  }
+  
+  
+  @media (max-width:960px){
+    header .navbar{
+      display: none;
+    }
+    label{
+      display: block;
+      font-size: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      transition-property: color;
+    }
+  
+    label:hover{
+      color: #fff;
+    }
+    label .close-btn{
+      display: none;
+     position: relative
+    }
+  
+    #check:checked ~ header .navbar{
+      z-index: 2;
+      position: fixed;
+      background: rgba(20, 26, 26, 0.9);
+      top: 0;
+      bottom: 0;
+      left:0 ;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #check:checked ~ header .navbar a{
+      font-weight: 700;
+      margin-right: 0;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+    }
+  
+    #check:checked ~ header label .menu-btn{
+      display: none;
+    }
+  
+    #check:checked ~ header label .close-btn{
+   z-index: 2;
+   display: block;
+   position: fixed;
+    }
+  
+   
+    
+  }
+  
